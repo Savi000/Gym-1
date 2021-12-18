@@ -78,6 +78,9 @@
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
+       @media (max-height: '400px') {
+        padding: 15px 20px
+      }
       .link {
         font-size: 32px;
         color: gray;
