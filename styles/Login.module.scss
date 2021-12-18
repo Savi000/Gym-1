@@ -1,0 +1,108 @@
+@import "./variables";
+
+.createAccount,
+.signIn {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ff4e00;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+  form {
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30%;
+    height: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    @media (max-width: $breakpoint-tablet) {
+      width: 70%;
+    }
+
+    p {
+      font-size: 12px;
+      max-width: 90%;
+      color: red;
+      margin: auto;
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+    input,
+    .inpValid,
+    .inpValid,
+    label {
+      width: 90%;
+      margin: 2px auto;
+    }
+    label {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    input {
+      height: 8%;
+      border-radius: 10px;
+      border: rgb(218, 220, 224) 1px solid;
+    }
+    .inpValid {
+      height: 8%;
+      border-radius: 10px;
+      border: green 1px solid;
+      outline: green 1px solid;
+    }
+    .inpInvalid {
+      height: 8%;
+      border-radius: 10px;
+      border: red 1px solid;
+      outline: red 1px solid;
+    }
+    button {
+      width: 70%;
+      margin: auto;
+      padding: 10px 0px;
+      border: none;
+      background: blue;
+      border-radius: 20px;
+      color: white;
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    .links {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      .link {
+        font-size: 32px;
+        color: gray;
+      }
+      .active {
+        font-size: 32px;
+        color: blue;
+      }
+    }
+  }
+  .homeLink {
+    font-size: 32px;
+    margin-left: 1vw;
+    width: fit-content;
+    &:hover {
+      transition: 0.5s;
+      color: white;
+    }
+  }
+}
+.eye {
+  font-size: 2vh;
+  margin-left: 25.5vw;
+  margin-top: -5vh;
+  @media (max-width: $breakpoint-tablet) {
+    margin-left: 61.5vw;
+  }
+}

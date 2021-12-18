@@ -1,0 +1,55 @@
+@import "mixin.scss";
+@import "variables.scss";
+
+.footer {
+  @include flexbox(space-evenly);
+  color: white;
+  background: black;
+  align-items: center;
+  // margin-top: -45px; samo za home
+  .logoLink {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .contact {
+    a {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 3vh;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 12px;
+      }
+      &:hover {
+        @include hover(orange, 0.5s);
+      }
+    }
+    .phone,
+    .mail {
+      font-size: 5vh;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 3.5vh;
+      }
+      margin-right: 15px;
+    }
+    .mail {
+      margin-bottom: -5px;
+    }
+  }
+  .social {
+    display: flex;
+    .instagram,
+    .facebook {
+      font-size: 10vh;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 7vh;
+      }
+      margin-right: 2vw;
+      &:hover {
+        cursor: pointer;
+        transition: 0.5s;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

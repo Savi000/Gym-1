@@ -1,0 +1,293 @@
+@import "./mixin";
+// $breakpoint-tablet: 768px;
+@import "./variables";
+
+/*upper nav*/
+.navContact {
+  height: 50px;
+  width: 100%;
+  @include flexbox(space-around);
+  align-items: center;
+  background: rgb(64, 64, 64);
+  @media (max-width: $breakpoint-navbar) {
+    display: none;
+  }
+  .instagram,
+  .facebook {
+    font-size: 4vh;
+    margin-right: 10px;
+    &:hover {
+      @include hover(white, 1s);
+      transform: rotateY(360deg);
+    }
+  }
+
+  .contactMail {
+    a {
+      color: white;
+      padding-right: 20px;
+      &:hover {
+        @include hover(orange, 0.5s);
+      }
+      .phone,
+      .mail {
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+/*nav*/
+.nav {
+  @include flexbox(space-around);
+  align-items: center;
+
+  .badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+    font-size: 12px;
+    background: red;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+  }
+
+  .logo {
+    margin-left: 2%;
+  }
+  .logInBtn {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+  }
+  .signUpBtn {
+    cursor: pointer;
+
+    padding: 9.2px 18px;
+    background: orange;
+    color: white;
+    border: 1px solid white;
+    font-weight: bold;
+    &:hover {
+      background: rgba(255, 165, 0, 0.9);
+    }
+  }
+  ul {
+    @include flexbox(space-between);
+    height: fit-content;
+    // width: 70%;
+    align-items: center;
+    list-style: none;
+  }
+  .link {
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 30px;
+    background: linear-gradient(to bottom, orange 0%, orange 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    text-decoration: none;
+    transition: background-size 0.2s;
+    &:hover {
+      background-size: 4px 55px;
+    }
+  }
+  .active {
+    padding: 10px 20px;
+    background: orange;
+    color: white;
+    margin-right: 30px;
+  }
+}
+.offerList {
+  height: 0;
+  p {
+    display: none;
+  }
+}
+/*li with menu on hover*/
+
+.offer:hover {
+  .offerList {
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    align-items: center;
+    position: absolute;
+    background: orange;
+    width: 11%;
+    height: fit-content;
+  }
+  p {
+    display: flex;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.smallNav {
+  display: none;
+}
+
+.cartLink,
+.activeCartLink {
+  display: none;
+}
+
+/*RESPONSIVE NAVBAR*/
+
+@media (max-width: $breakpoint-navbar) {
+  .nav {
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-left: 80%;
+      @media (max-width: "500px") {
+        margin-left: 70%;
+      }
+      // display: none;
+    }
+  }
+  .nav ul {
+    display: none;
+  }
+
+  .smallNav {
+    display: flex;
+    position: absolute;
+    width: 0;
+    top: -3%;
+    z-index: 999;
+    ul {
+      list-style: none;
+      transform: translateX(-600px);
+      transition: 0.7s;
+      background: gray;
+      width: fit-content;
+      text-align: center;
+
+      li {
+        width: 45vw;
+        padding: 30px 0px;
+        background: white;
+        color: black;
+        cursor: pointer;
+      }
+    }
+
+    .navActive {
+      transition: 0.7s;
+
+      color: white;
+      list-style: none;
+      transform: translateX(-40px);
+      // ZASTO KAD ODJE BUDE TRANSFORM 0PX zasto links nisu 100% width od ul
+      // z-index: 999;
+    }
+    .active {
+      color: orange;
+    }
+
+    .center,
+    .clicked {
+      // top: -40%; relative position
+      position: absolute;
+      top: 13%;
+      left: 7vw;
+      //zato sto mali nav ima width 0 kad se ne vidi
+      cursor: pointer;
+      // left: 5%;isto relative
+      transform: translate(-50%, -50%);
+
+      width: 40px;
+      transition: 1s;
+    }
+    .clicked {
+      transition: 0.5s;
+      z-index: 999;
+      left: 50vw;
+    }
+    .center:before,
+    .clicked::before,
+    .clicked::after,
+    .center:after,
+    .clicked div,
+    .center div {
+      background: #fff;
+      content: "";
+      display: block;
+      height: 4px;
+      border-radius: 3px;
+      margin: 7px 0;
+      transition: 0.5s;
+    }
+    .clicked:before {
+      transform: translateY(11px) rotate(135deg);
+    }
+    .clicked:after {
+      transform: translateY(-11px) rotate(-135deg);
+    }
+    .clicked:before {
+      transform: translateY(11px) rotate(135deg);
+    }
+    .clicked:after {
+      transform: translateY(-11px) rotate(-135deg);
+    }
+
+    .clicked div {
+      transform: scale(0);
+    }
+  }
+  .cartLink,
+  .activeCartLink {
+    display: flex;
+    color: white;
+    width: fit-content;
+    position: absolute;
+    top: 7%;
+    right: 22%;
+    @media (max-width: $breakpoint-tablet) {
+      right: 27%;
+    }
+    @media (max-width: "500px") {
+      right: 30%;
+    }
+  }
+  #lblCartCount {
+    font-size: 13px;
+    background: red;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+  }
+}
+.activeCartLink {
+  color: orange;
+}

@@ -1,0 +1,32 @@
+.location {
+  color: white;
+  border: 1px solid darkgray;
+  margin: 20px 10px;
+  max-width: 330px;
+  height: fit-content;
+  transition: 0.5s;
+  &:hover {
+    transition: 0.5s;
+    background: white;
+    color: black;
+  }
+  .gymName {
+    width: fit-content;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    color: orange;
+    border-bottom: 2px solid orange;
+  }
+  .streetName,
+  .description {
+    padding-left: 20px;
+  }
+  .readMoreBtn {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 8px 20px;
+    background: orange;
+    border: none;
+    outline: none;
+  }
+}

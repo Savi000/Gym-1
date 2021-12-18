@@ -1,0 +1,89 @@
+@import "./variables";
+.modal {
+  background: white; /*iskopiraj css sa gugl-a kad znas sad je ostao samo css ja sam pozicionirao i sve sad mzs da iskopiras*/
+  width: 60%;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  height: 60%;
+  z-index: 500;
+  @media (max-width: $breakpoint-tablet) {
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    input,
+    .inputValid,
+    .inputInvalid,
+    label,
+    p {
+      width: 60%;
+      margin: auto;
+      @media (max-width: $breakpoint-tablet) {
+        width: 80%;
+        height: 35px;
+      }
+    }
+
+    .inpInvalid {
+      border: 1px solid red;
+      outline: 1px solid red;
+    }
+    .inpValid {
+      border: 1px solid green;
+      outline: 1px solid green;
+    }
+
+    .closeBtn {
+      margin-top: 10px;
+      margin-left: 10px;
+      width: fit-content;
+      font-size: 20px;
+      padding: 5px 10px;
+      background: rgba(128, 128, 128, 0.3);
+      border-radius: 15px;
+      border: none;
+      transition: 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.3s;
+        background: rgba(128, 128, 128, 0.5);
+        padding: 7px 12px;
+      }
+    }
+    .confirmBtn {
+      background: yellow;
+      border: none;
+      outline: none;
+      border-radius: 15px;
+      padding: 10px 20px;
+      width: fit-content;
+      margin: auto;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+.modalClosed {
+  display: none;
+}
+/*backdrop*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000e4; /*isto kao rgba vljd*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

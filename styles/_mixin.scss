@@ -1,0 +1,10 @@
+@mixin flexbox($justify) {
+  display: flex;
+  justify-content: $justify;
+  //   align-items: $align;
+}
+@mixin hover($color, $transition) {
+  cursor: pointer;
+  transition: $transition;
+  color: $color;
+}

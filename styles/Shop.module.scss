@@ -1,0 +1,250 @@
+@import "./variables";
+
+.cartBtn {
+  background: yellowgreen;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.productImage {
+  transition: 0.4s;
+  &:hover {
+    transition: 0.4s;
+    // dodaj box shadow u image na hover
+    transform: scale(1.08);
+    cursor: pointer;
+  }
+}
+
+//animation when clicked
+.btn {
+  circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: green;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  svg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: green;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill 0.4s ease-in-out 0.4s forwards,
+      scale 0.3s ease-in-out 0.9s both;
+  }
+
+  path {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+
+  /*keyframes bili odje*/
+}
+
+/*filter*/
+
+.smallFilter {
+  display: none;
+}
+.categoriesAndProducts {
+  display: flex;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    // align-items: center;
+  }
+  .categoriesAndPrice {
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  .products {
+    display: flex;
+    max-width: 80%;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: auto;
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 50%;
+    }
+  }
+  summary::marker {
+    /*summary marker kad je display open ne radi zasss?? odje bi mogla animacija a nzm zasto nece*/
+    display: none;
+    content: "";
+  }
+
+  summary::after {
+    font-family: "Hiragino Mincho ProN", "Open Sans", sans-serif;
+    content: "▶";
+    position: absolute;
+    top: 0.1rem;
+    left: 4.8rem;
+    transform: rotate(0);
+    transform-origin: center;
+    transition: 0.2s transform ease;
+  }
+  details[open] > summary::after {
+    transform: rotate(90deg);
+    transition: 0.7s transform ease;
+  }
+
+  /* # The Sliding Summary # */
+  details {
+    overflow: hidden;
+    width: 60%;
+    // zbog ovoga se gubio naslov na animaciju probaj da maknes ovo pa vidi kako animacija cudno radi
+    margin-left: 20px;
+    div {
+      color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        transition: 0.3s;
+        color: black;
+      }
+    }
+
+    input {
+      height: 18px;
+      width: 18px;
+      vertical-align: text-bottom;
+      // &:checked + label {
+      // color: black;
+      // }
+    }
+    @media (max-width: $breakpoint-tablet) {
+      width: 20%;
+    }
+  }
+  details summary {
+    cursor: pointer;
+    // margin-left: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  details > *:not(summary) {
+    animation: details-show 0.7s ease-in-out;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    color: transparent;
+    overflow: hidden;
+  }
+  details[open] > *:not(summary) {
+    color: inherit;
+  }
+}
+.smallImg:hover {
+  cursor: pointer;
+}
+.active {
+  border: 1px solid black;
+}
+
+@keyframes details-show {
+  from {
+    margin-bottom: -80%;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #fff;
+  }
+}
+
+/*ONE PRODUCT*/
+.productDiv {
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+  @media (max-width: $breakpoint-navbar) {
+    max-width: 50%;
+    flex-direction: column;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 60%;
+  }
+  @media (max-width: "500px") {
+    max-width: 90%;
+  }
+  .pictureSlider {
+    @media (max-width: $breakpoint-navbar) {
+      display: flex;
+    }
+  }
+}
+.paragraphDiv {
+  width: 50%;
+  @media (max-width: $breakpoint-navbar) {
+    width: 100%;
+  }
+  h2 {
+    border-bottom: 2px gray dotted;
+  }
+}
+.addToCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  .addBtn,
+  .removeBtn {
+    cursor: pointer;
+    height: fit-content;
+    border-radius: 7px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+  }
+}
+.form {
+  text-align: center;
+  input {
+    margin-right: 5px;
+  }
+}

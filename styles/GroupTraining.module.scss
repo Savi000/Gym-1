@@ -1,0 +1,70 @@
+@import "./variables";
+
+.backgroundDiv {
+  background: url("https://media.istockphoto.com/photos/every-step-taken-towards-fitness-pays-off-picture-id966295656?k=20&m=966295656&s=612x612&w=0&h=cYAqnyhO6E8x1SRCOjcBxWcOovPyWVAgFv1dTVl08sw=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+.groupTrainingOne,
+.groupTrainingTwo {
+  animation: opacity 2s;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 80%;
+    margin: auto; /*ne moze na obican zbog margin-bottom kad stavis margin auto ponisti se */
+    flex-direction: column;
+  }
+  .aboutGym,
+  .aboutGymTwo {
+    flex-direction: row;
+    max-width: 40%;
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 100%;
+    }
+    margin-left: 3%;
+  }
+}
+.groupTrainingTwo {
+  background: rgb(38, 38, 38);
+  color: rgb(201, 201, 201);
+  padding: 3% 3%;
+  margin: auto;
+  max-width: 80%;
+  .aboutGymTwo {
+    margin-right: 3%;
+    max-width: 55%;
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 100%;
+    }
+  }
+}
+
+// .groupTrainingTwo {
+//   display: flex;
+//   justify-content: center;
+//   background: rgb(38, 38, 38);
+//   color: rgb(201, 201, 201);
+//   padding: 3% 3%;
+//   max-width: 80%;
+//   margin: auto;
+//   .aboutGymTwo {
+//     flex-direction: row;
+//     max-width: 50%;
+//     margin-right: 3%;
+//   }
+// }
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

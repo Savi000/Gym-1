@@ -1,0 +1,75 @@
+@import "./mixin";
+// $breakpoint-tablet: 768px;
+@import "./variables";
+
+.about {
+  //   @include flexbox("");
+  height: fit-content;
+  background: black;
+  color: gray;
+  h1 {
+    margin-top: -20px;
+    /*nejasno zasto ima praznina uopste*/
+    text-align: center;
+  }
+  iframe {
+    margin-left: 7%;
+    border: 2px solid orange;
+    box-shadow: 15px 15px 15px white; /*samo ga malo pojacaj i promjeni ove boje*/
+    // animation: slideIn 2s;
+
+    @media (max-width: $breakpoint-navbar) {
+      margin-left: 12%;
+      width: 75%;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      margin-left: 2.2%;
+      width: 95%;
+    }
+  }
+  .aboutContent {
+    @include flexbox(space-evenly);
+    // align-items: center; vidi ovo kako je ljepse kad editujes h2
+    @media (max-width: $breakpoint-navbar) {
+      display: flex;
+      flex-direction: column;
+    }
+    .firstText {
+      font-size: 20px;
+      width: 40%;
+      @media (max-width: $breakpoint-navbar) {
+        font-size: 16px;
+        width: 95%;
+        margin: auto;
+      }
+    }
+  }
+}
+.motivationalMessage {
+  background-image: url("https://media.istockphoto.com/photos/workout-gym-with-gym-equipment-picture-id1135188049?k=20&m=1135188049&s=612x612&w=0&h=fV8_RLPM-42RzX3VXLYNx90NWi2tXOAfazHODyTBj2E=");
+  background-size: cover;
+  height: fit-content;
+  text-align: center;
+  margin-top: -50px;
+  h1 {
+    color: orange;
+    font-size: 65px;
+    padding-bottom: 10%;
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 55px;
+    }
+  }
+  h3 {
+    margin-left: 10%;
+    padding-top: 7%;
+    // margin-bottom: 10%; mjenjaj na media screen
+    width: 80%;
+    color: white;
+    font-size: 45px;
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 30px;
+    }
+  }
+}
+
+// and (min-height: "odlaptoppa")

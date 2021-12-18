@@ -1,0 +1,51 @@
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20vh;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 47vw;
+    bottom: 53vh;
+    width: 5%; /* or 100px */
+    border-bottom: 2px solid gray;
+  }
+}
+
+.table {
+  color: white;
+  height: fit-content;
+  display: flex;
+  align-items: center; /*kad je flex-direction column align-items i justify-content mjenjaju uloge*/
+  flex-direction: column;
+
+  .offerAndPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(86, 86, 86);
+    max-width: 65%;
+
+    p {
+      padding: 15px 35px;
+      // padding: 15px 10vw;
+    }
+    .border {
+      border-right: 1px solid rgb(86, 86, 86);
+    }
+    h4 {
+      text-transform: uppercase;
+      padding-left: 10px;
+      max-width: 90%;
+    }
+  }
+}
+$breakpoint-laptop: 1366px;
+/*kad budes radio responsive pa skontaj kako ovo i sta */
+@media only screen and (min-width: $breakpoint-laptop) {
+  .offerAndPrice {
+    p {
+      padding: 15px 10vw;
+    }
+  }
+}
