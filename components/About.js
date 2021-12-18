@@ -53,7 +53,7 @@ const About = () => {
           sunt, cum non eligendi dignissimos neque laudantium doloremque
           voluptatem explicabo exercitationem?
         </h3>
-        <h1>WE ASPIRE TO BE DESIRE!</h1>
+        <h1>OUR STORY IS JUST BEGINNING!</h1>
       </div>
     </>
   );
