@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .header {
   text-align: center;
   color: white;
@@ -25,10 +27,14 @@
     justify-content: center;
     border: 1px solid rgb(86, 86, 86);
     max-width: 65%;
-
+    @media (max-width: $breakpoint-tablet){
+    max-width: 95%;
+    }
+    
+    
     p {
       padding: 15px 35px;
-      // padding: 15px 10vw;
+      
     }
     .border {
       border-right: 1px solid rgb(86, 86, 86);
@@ -40,12 +46,4 @@
     }
   }
 }
-$breakpoint-laptop: 1366px;
-/*kad budes radio responsive pa skontaj kako ovo i sta */
-@media only screen and (min-width: $breakpoint-laptop) {
-  .offerAndPrice {
-    p {
-      padding: 15px 10vw;
-    }
-  }
-}
+
