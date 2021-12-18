@@ -44,6 +44,9 @@
     label {
       margin-top: 10px;
       font-size: 12px;
+      @media (max-height: '500px') {
+       margin-top: 3px;
+      }
     }
     input {
       height: 8%;
