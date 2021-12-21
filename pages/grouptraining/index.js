@@ -10,7 +10,7 @@ const gymTrainingPage = () => {
             <UpperNav />
             <div className={classes.backgroundDiv}>
                 <Nav />
-                <h1 style={{ color: 'white', paddingTop: '35px', paddingBottom: '35px', marginLeft: '10%' }}>predugo ime route-a moracemo skracivati</h1>
+                <h1 style={{ color: 'white', paddingTop: '35px', paddingBottom: '35px', marginLeft: '10%' }}>Group training</h1>
             </div>
             <GroupTraining />
         </>
