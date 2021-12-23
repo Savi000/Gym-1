@@ -37,13 +37,13 @@ const CartItems = ({ cartItem }) => {
       <h2>{name}</h2>
 
       <div className={classes.amount}>
-        <button onClick={() => addToCart(cartItem, "increase")}>
-          <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
-        </button>
-        <p>{cartAmount}</p>
-        <button onClick={() => addToCart(cartItem, "decrease")}>
+   <button onClick={() => addToCart(cartItem, "decrease")}>
           <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
         </button>
+        <p>{cartAmount}</p>
+  <button onClick={() => addToCart(cartItem, "increase")}>
+          <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+        </button>   
       </div>
       <p>${price}</p>
     </div>
