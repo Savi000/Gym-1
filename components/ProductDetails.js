@@ -98,14 +98,13 @@ const ProductDetails = ({ supplement }) => {
             necessitatibus repudiandae eius beatae veritatis!
           </p>
           <div className={classes.addToCart}>
-            <button className={classes.addBtn} onClick={increaseAmount}>
-              <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
-            </button>
-
-            <p>Amount: {amount}</p>
             <button className={classes.removeBtn} onClick={decreaseAmount}>
               <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
             </button>
+            <p>Amount: {amount}</p>
+            <button className={classes.addBtn} onClick={increaseAmount}>
+              <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+            </button>            
             <button
               className={classes.cartBtn}
               onClick={(e) => addToCart(e, supplement)}
